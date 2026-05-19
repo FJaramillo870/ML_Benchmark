@@ -5,5 +5,4 @@ onnxruntime
 numpy
 pandas
 matplotlib
-pytest
 scikit-learn
