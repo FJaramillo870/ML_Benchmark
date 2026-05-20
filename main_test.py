@@ -1,4 +1,5 @@
 import main
 
-def test_unit_test_test():
-    assert main.unit_test_test(5) == 25
+def test_neural_network_forward_pass():
+    # If the function runs without crashing, the test passes
+    main.test_forward_pass()

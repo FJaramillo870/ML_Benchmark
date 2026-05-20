@@ -1,8 +1,7 @@
 pytest==8.4.2
-torch
 onnx
 onnxruntime
 numpy
 pandas
 matplotlib
-scikit-learn
+torch
