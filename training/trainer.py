@@ -56,5 +56,9 @@ def train_model():
 
     print("Training Complete!")
 
+    # Save it directly to whatever folder PyCharm is currently looking at
+    torch.save(model.state_dict(), "trained_autoencoder.pth")
+    print("Model saved!")
+
 if __name__ == "__main__":
     train_model()
