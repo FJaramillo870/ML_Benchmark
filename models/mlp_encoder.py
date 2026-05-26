@@ -39,5 +39,3 @@ class MLPAutoencoder(nn.Module):
         # 3. Remove the "1 Channel" dimension from the MIDDLE (Index 1)
         return decoded.squeeze(1)
         # decoded is back to [32, 64]
-
-#Hello
