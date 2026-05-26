@@ -21,7 +21,7 @@ def run_anomaly_detector():
 
     # 3. Setup the Math
     criterion = nn.MSELoss()
-    anomaly_threshold = 0.08  # Our trigger wire
+    anomaly_threshold = 0.015  # Our trigger wire
 
     # 4. Generate "Live" Data (Matching Training Resolution!)
     dataset = SyntheticPowerDataset(num_samples=1000, sequence_length=64)
