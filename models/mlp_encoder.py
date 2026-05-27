@@ -4,7 +4,7 @@ class MLPAutoencoder(nn.Module):
     def __init__(self):
         super().__init__()
         self.encoder = nn.Sequential(
-            # Input: [Batch, 1 Channel, 64 Length].
+            # Input: [Batch, 1 Channel, 64 Length]
             nn.Conv1d(in_channels=1, out_channels=8, kernel_size=15, stride=2, padding=7),
             nn.ReLU(),
             # Output: [Batch, 8 Channels, 32 Length]

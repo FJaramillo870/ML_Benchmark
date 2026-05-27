@@ -57,6 +57,7 @@ def train_model():
     print("Training Complete!")
 
     # Save it directly to whatever folder PyCharm is currently looking at
+    # use the frozen.pth instead to create a file that won't be changed
     torch.save(model.state_dict(), "trained_autoencoder.pth")
     print("Model saved!")
 

@@ -13,6 +13,7 @@ def run_anomaly_detector():
     print("Booting Edge AI Anomaly Detector...")
 
     # 2. Load the Blueprint and the Learned Weights
+    # Change to frozen.pth to change data that is used in evaluation
     model = MLPAutoencoder()
     model.load_state_dict(torch.load("trained_autoencoder.pth", weights_only=True))
 
@@ -21,7 +22,7 @@ def run_anomaly_detector():
 
     # 3. Setup the Math
     criterion = nn.MSELoss()
-    anomaly_threshold = 0.015  # Our trigger wire
+    anomaly_threshold = 0.1  # Our trigger wire
 
     # 4. Generate "Live" Data (Matching Training Resolution!)
     dataset = SyntheticPowerDataset(num_samples=1000, sequence_length=64)
@@ -31,7 +32,7 @@ def run_anomaly_detector():
 
     # Clone it and inject the Day 1 Motor Stall Outlier (* 5.0)
     anomalous_sensor_reading = normal_sensor_reading.clone()
-    anomalous_sensor_reading[20:25] = anomalous_sensor_reading[20:25] * 5.0
+    anomalous_sensor_reading[20:25] = anomalous_sensor_reading[20:25] + 5.0
 
     # Manually add the "Batch" dimension so shape is [1, 64]
     normal_sensor_reading = normal_sensor_reading.unsqueeze(0)
