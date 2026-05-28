@@ -3,5 +3,6 @@ onnx
 onnxruntime
 numpy
 pandas
-matplotlib
+matplotlib~=3.10.6
 torch
+torchvision
