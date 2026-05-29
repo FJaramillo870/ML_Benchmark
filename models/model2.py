@@ -11,6 +11,7 @@ class CIFAR10Classifier(nn.Module):
         # --- THE FEATURE EXTRACTOR (The "Encoder") ---
         self.features = nn.Sequential(
             # Input: N, 3, 32, 32
+            # 3 because its RGB, create 16 different "feature detectors", will use a 3x3 grid of pixels, moves 1 pixel at a time to the right until it hits the edge it moves down one pixel and does it again, creates a 1 pixel thick value of 0 so the full image can be scanned
             nn.Conv2d(in_channels=3, out_channels=16, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),  # -> N, 16, 16, 16
