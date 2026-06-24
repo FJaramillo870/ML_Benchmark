@@ -38,6 +38,8 @@ class CIFAR10Classifier(nn.Module):
         # 1. Extract visual features
         x = self.features(x)
 
+        print(f"Shape before Flatten: {x.shape}")
+
         # 2. Classify based on those features
         x = self.classifier(x)
 
