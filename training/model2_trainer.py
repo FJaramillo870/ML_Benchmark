@@ -27,7 +27,8 @@ def train_model():
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
     # 4. The Training Loop
-    num_epochs = 10  # 10 epochs is usually enough to see CIFAR-10 start learning
+    num_epochs = 15
+    # 10 epochs is usually enough to see CIFAR-10 start learning
 
     print("Starting Training...")
     for epoch in range(num_epochs):
