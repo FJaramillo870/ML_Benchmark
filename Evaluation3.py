@@ -8,6 +8,7 @@ import time
 # Native imports work perfectly from the root directory!
 from data.data_loader import get_energy_dataloaders
 from models.forecasting_model import LSTMForecaster
+from benchmark_logger import log_benchmark
 
 
 def evaluate():
@@ -48,6 +49,19 @@ def evaluate():
     print("\n--- TANGIBLE ARTIFACT ---")
     print(f"Test MSE Loss:       {avg_loss:.6f}")
     print(f"Avg CPU Latency:     {avg_latency:.2f} ms (Batch Size 32)")
+
+    model_size_mb = os.path.getsize(model_path) / (1024 * 1024)
+
+    log_benchmark(
+        model_id="Model 3",
+        architecture="LSTM",
+        precision="float32",
+        metric_name="Test MSE",
+        metric_value=avg_loss,
+        latency_ms=avg_latency,
+        batch_size=32,
+        model_size_mb=model_size_mb
+    )
 
 
 if __name__ == "__main__":

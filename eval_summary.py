@@ -1,6 +1,7 @@
 import os
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
+from benchmark_logger import log_benchmark
 
 import torch
 import torch.nn as nn
@@ -100,6 +101,25 @@ def run_evaluation_summary():
     # Save the file to your directory
     plt.savefig('evaluation_histogram.png', dpi=300, bbox_inches='tight')
     plt.close()
+
+    # Save the file to your directory
+    plt.savefig('evaluation_histogram.png', dpi=300, bbox_inches='tight')
+    plt.close()
+
+    # --- AUTO-LOGGER INTEGRATION ---
+    model_path = "frozen.pth"
+    model_size_mb = os.path.getsize(model_path) / (1024 * 1024)
+
+    log_benchmark(
+        model_id="Model 1",
+        architecture="1D Autoencoder",
+        precision="float32",
+        metric_name="Avg Anomaly MSE",
+        metric_value=avg_anomaly,
+        latency_ms=0.05,  # Placeholder baseline latency
+        batch_size=1,
+        model_size_mb=model_size_mb
+    )
 
 
 if __name__ == "__main__":
