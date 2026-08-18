@@ -1,0 +1,22 @@
+# ========================
+# Python & Environments
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# ========================
+# IDE & OS Files
+# ========================
+.idea/
+.DS_Store
+Thumbs.db
+
+# ========================
+# Raw Datasets & Archives
+# ========================
+data/cifar-10-batches-py/
+data/data/
+data/*.tar.gz
