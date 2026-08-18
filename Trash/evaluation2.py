@@ -15,7 +15,7 @@ def evaluate_vision_model():
     # 2. Load your trained model blueprint and weights
     model = CIFAR10Classifier()
     # Make sure this matches the exact name you used in your trainer.py!
-    model.load_state_dict(torch.load("model2_cifar10.pth", weights_only=True))
+    model.load_state_dict(torch.load("../models/checkpoints/model2_cifar10.pth", weights_only=True))
 
     # CRITICAL: This locks the model's weights and turns off training behaviors!
     model.eval()

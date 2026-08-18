@@ -7,7 +7,7 @@ import torch.nn as nn
 # 1. Import your blueprint and data
 from models.mlp_encoder import MLPAutoencoder
 from data.synthetic_power import SyntheticPowerDataset
-from benchmark_logger import log_benchmark
+from benchmarks.benchmark_logger import log_benchmark
 
 
 def run_anomaly_detector():
@@ -15,7 +15,7 @@ def run_anomaly_detector():
 
     # 2. Load the Blueprint and the Learned Weights
     # Change to frozen.pth to change data that is used in evaluation
-    model_path = "trained_autoencoder.pth"  # <-- ADD THIS LINE
+    model_path = "../models/checkpoints/trained_autoencoder.pth"  # <-- ADD THIS LINE
     model = MLPAutoencoder()
     model.load_state_dict(torch.load(model_path, weights_only=True))  # <-- UPDATE THIS LINE
 

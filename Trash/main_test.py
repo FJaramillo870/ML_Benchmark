@@ -1,4 +1,4 @@
-import main
+from Trash import main
 import torch
 
 def test_neural_network_forward_pass():

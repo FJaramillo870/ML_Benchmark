@@ -8,7 +8,7 @@ import time
 # Native imports work perfectly from the root directory!
 from data.data_loader import get_energy_dataloaders
 from models.forecasting_model import LSTMForecaster
-from benchmark_logger import log_benchmark
+from benchmarks.benchmark_logger import log_benchmark
 
 
 def evaluate():
@@ -21,7 +21,7 @@ def evaluate():
     model = LSTMForecaster(input_size=1, hidden_size=64, num_layers=1, output_size=1)
 
     # Clean, direct path to the model file
-    model_path = os.path.join("models", "model3_lstm.pth")
+    model_path = os.path.join("../models", "model3_lstm.pth")
     model.load_state_dict(torch.load(model_path))
 
     # Set to evaluation mode

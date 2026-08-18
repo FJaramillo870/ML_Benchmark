@@ -1,0 +1,27 @@
+Timestamp,Model ID,Architecture,Precision,Metric Name,Metric Value,Latency (ms),Batch Size,Model Size (MB)
+2026-08-10 19:16:32,Model 3,LSTM,float32,Test MSE,0.007256,4.1445,32,0.0686
+2026-08-10 19:16:49,Model 2,2D CNN,int8,Accuracy (%),71.22,0.3658,1,0.2686
+2026-08-15 13:10:33,Model 3,LSTM,float32,Test MSE,0.007256,3.2553,32,0.0686
+2026-08-15 13:10:45,Model 2,2D CNN,int8,Accuracy (%),71.22,0.3177,1,0.2686
+2026-08-15 13:18:19,Model 1,1D Autoencoder,float32,Normal MSE,0.003606,0.05,1,0.0193
+2026-08-15 13:18:55,Model 3,LSTM,float32,Test MSE,0.007256,0.9607,32,0.0686
+2026-08-15 13:19:11,Model 3,LSTM,float32,Test MSE,0.007256,0.6935,32,0.0686
+2026-08-15 13:20:56,Model 3,LSTM,float32,Test MSE,0.007256,0.6921,32,0.0686
+2026-08-15 13:20:58,Model 1,1D Autoencoder,float32,Normal MSE,0.006114,0.05,1,0.0193
+2026-08-15 13:21:09,Model 2,2D CNN,int8,Accuracy (%),71.22,0.3115,1,0.2686
+2026-08-15 13:23:55,Model 1,1D Autoencoder,float32,Avg Anomaly MSE,0.385461,0.05,1,0.0189
+2026-08-15 13:24:06,Model 3,LSTM,float32,Test MSE,0.007256,0.6497,32,0.0686
+2026-08-15 13:24:10,Model 1,1D Autoencoder,float32,Avg Anomaly MSE,0.384058,0.05,1,0.0189
+2026-08-15 13:24:21,Model 2,2D CNN,int8,Accuracy (%),71.22,0.3084,1,0.2686
+2026-08-16 16:39:39,Model 3,LSTM,float32,Test MSE,0.007256,3.2403,32,0.0686
+2026-08-16 16:39:43,Model 1,1D Autoencoder,float32,Avg Anomaly MSE,0.397268,0.05,1,0.0189
+2026-08-16 16:39:56,Model 2,2D CNN,int8,Accuracy (%),71.22,0.327,1,0.2686
+2026-08-16 16:40:47,Model 3,LSTM,float32,Test MSE,0.007256,0.6379,32,0.0686
+2026-08-16 16:40:51,Model 1,1D Autoencoder,float32,Avg Anomaly MSE,0.374009,0.05,1,0.0189
+2026-08-16 16:41:03,Model 2,2D CNN,int8,Accuracy (%),71.22,0.3481,1,0.2686
+2026-08-16 16:42:03,Model 3,LSTM,float32,Test MSE,0.007256,0.6955,32,0.0686
+2026-08-16 16:42:07,Model 1,1D Autoencoder,float32,Avg Anomaly MSE,0.399799,0.05,1,0.0189
+2026-08-16 16:42:18,Model 2,2D CNN,int8,Accuracy (%),71.22,0.312,1,0.2686
+2026-08-16 16:42:20,Model 2 (GPU),2D CNN,float32,Latency Test,0.0,0.2541,1,0.015
+2026-08-16 21:29:42,Model 2,2D CNN,int8,Accuracy (%),71.22,0.3594,1,0.2686
+2026-08-16 21:34:08,Model 2,2D CNN,int8,Accuracy (%),71.22,0.3228,1,0.2686

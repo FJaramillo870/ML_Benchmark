@@ -6,13 +6,13 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 import onnxruntime as ort
-from benchmark_logger import log_benchmark
+from benchmarks.benchmark_logger import log_benchmark
 
 def evaluate_quantized_model():
     print("--- EVALUATING QUANTIZED MODEL 2 (VISION) ---")
 
     # 1. Point ONNX Runtime at your new int8 model
-    model_path = os.path.join("inference", "model2_cifar10_quantized.onnx")
+    model_path = os.path.join("../inference", "model2_cifar10_quantized.onnx")
     if not os.path.exists(model_path):
         print(f"[ERROR] Could not find {model_path}")
         return
