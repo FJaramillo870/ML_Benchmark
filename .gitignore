@@ -20,3 +20,8 @@ Thumbs.db
 data/cifar-10-batches-py/
 data/data/
 data/*.tar.gz
+
+# ========================
+# Deprecated / Legacy Code
+# ========================
+Trash/
