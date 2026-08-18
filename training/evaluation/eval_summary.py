@@ -1,7 +1,7 @@
 import os
 
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
-from benchmark_logger import log_benchmark
+from benchmarks.benchmark_logger import log_benchmark
 
 import torch
 import torch.nn as nn
@@ -19,7 +19,7 @@ def run_evaluation_summary():
     # 2. Load the Best Checkpoint
     model = MLPAutoencoder()
     # Update this to whatever you named your final 15-kernel save file
-    model.load_state_dict(torch.load("frozen.pth", weights_only=True))
+    model.load_state_dict(torch.load("../../Trash/frozen.pth", weights_only=True))
     model.eval()
 
     criterion = nn.MSELoss()
@@ -107,7 +107,7 @@ def run_evaluation_summary():
     plt.close()
 
     # --- AUTO-LOGGER INTEGRATION ---
-    model_path = "frozen.pth"
+    model_path = "../../Trash/frozen.pth"
     model_size_mb = os.path.getsize(model_path) / (1024 * 1024)
 
     log_benchmark(

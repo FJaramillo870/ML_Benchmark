@@ -27,14 +27,15 @@ if __name__ == "__main__":
     test_pipeline = [
         "eval_summary.py", # Tests Model 1
         "evaluate_quantized.py",  # Tests Model 2 Accuracy & Latency (logs to CSV)
-        "hardware_profiler.py"  # Tests Model 2 Memory constraints & P99 Latency
+        "hardware_profiler.py",  # Tests Model 2 Memory constraints & P99 Latency
+        "gpu_benchmark.py" #Tests GPU benchmark
     ]
 
     # Intelligently locate Model 3's evaluation script based on your file tree
-    if os.path.exists("Evaluation3.py"):
+    if os.path.exists("../Trash/Evaluation3.py"):
         test_pipeline.insert(0, "Evaluation3.py")
-    elif os.path.exists(os.path.join("training", "Evaluation3.py")):
-        test_pipeline.insert(0, os.path.join("training", "Evaluation3.py"))
+    elif os.path.exists(os.path.join("../training", "Evaluation3.py")):
+        test_pipeline.insert(0, os.path.join("../training", "Evaluation3.py"))
 
     # Execute the pipeline
     suite_success = True

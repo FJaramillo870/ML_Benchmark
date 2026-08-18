@@ -4,14 +4,14 @@ import csv
 from datetime import datetime
 
 # Place the results inside your existing 'benchmarks' folder
-CSV_PATH = os.path.join("benchmarks", "benchmark_results.csv")
+CSV_PATH = os.path.join("", "benchmark_results.csv")
 
 
 def log_benchmark(model_id, architecture, precision, metric_name, metric_value, latency_ms, batch_size, model_size_mb):
     """
     Appends a standardized benchmark result entry to the benchmarks CSV file.
     """
-    os.makedirs("benchmarks", exist_ok=True)
+    os.makedirs("", exist_ok=True)
     file_exists = os.path.isfile(CSV_PATH)
 
     headers = [

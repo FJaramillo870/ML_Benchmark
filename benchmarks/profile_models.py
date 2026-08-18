@@ -52,7 +52,7 @@ def run_benchmark():
 
     # --- MODEL 1: ANOMALY DETECTOR ---
     print("\n[ MODEL 1: 1D ANOMALY DETECTOR ]")
-    model1_path = "inference/anomaly_detector.onnx"
+    model1_path = "../inference/anomaly_detector.onnx"
     dummy_input1 = np.random.randn(1, 64).astype(np.float32)
 
     profile_session(model1_path, 'CPUExecutionProvider', 'sensor_sequence', dummy_input1)
@@ -60,7 +60,7 @@ def run_benchmark():
 
     # --- MODEL 2: VISION CLASSIFIER ---
     print("\n[ MODEL 2: 2D VISION CLASSIFIER ]")
-    model2_path = "inference/model2_cifar10.onnx"
+    model2_path = "../inference/model2_cifar10.onnx"
     dummy_input2 = np.random.randn(1, 3, 32, 32).astype(np.float32)
 
     profile_session(model2_path, 'CPUExecutionProvider', 'input_image', dummy_input2)

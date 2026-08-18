@@ -1,8 +1,7 @@
 import os
-import time
 import numpy as np
 import psutil
-from inference_wrapper import EdgeInferenceEngine
+from Deployment.inference_wrapper import EdgeInferenceEngine
 
 
 def run_profiler(model_path, iterations=1000):
@@ -54,5 +53,5 @@ def run_profiler(model_path, iterations=1000):
 
 if __name__ == "__main__":
     # Test the profiler using the quantized model
-    test_model = os.path.join("inference", "model2_cifar10_quantized.onnx")
+    test_model = os.path.join("../inference", "model2_cifar10_quantized.onnx")
     run_profiler(test_model, iterations=1000)

@@ -10,16 +10,24 @@ class EdgeInferenceEngine:
     This is the core engine that will eventually run on the Raspberry Pi.
     """
 
-    def __init__(self, model_path):
+    def __init__(self, model_path, use_gpu=False):
         if not os.path.exists(model_path):
             raise FileNotFoundError(f"Model not found at: {model_path}")
 
         print(f"[SYSTEM] Booting Edge Engine for: {os.path.basename(model_path)}")
 
-        # 1. Initialize ONNX Runtime Session
-        self.session = ort.InferenceSession(model_path)
+        # --- NEW: Hardware Routing Logic ---
+        if use_gpu:
+            print("[SYSTEM] Hardware Route: GPU (CUDAExecutionProvider)")
+            providers = ['CUDAExecutionProvider', 'CPUExecutionProvider']
+        else:
+            print("[SYSTEM] Hardware Route: CPU (CPUExecutionProvider)")
+            providers = ['CPUExecutionProvider']
 
-        # 2. Automatically detect the input node name
+        # Initialize ONNX Runtime Session with the requested hardware
+        self.session = ort.InferenceSession(model_path, providers=providers)
+
+        # Automatically detect the input node name
         self.input_name = self.session.get_inputs()[0].name
 
     def predict(self, input_data):
@@ -43,7 +51,7 @@ if __name__ == "__main__":
     print("--- TESTING UNIFIED INFERENCE ENGINE ---")
 
     # 1. Test it with your quantized Vision Model
-    vision_model_path = os.path.join("inference", "model2_cifar10_quantized.onnx")
+    vision_model_path = os.path.join("../inference", "model2_cifar10_quantized.onnx")
     engine = EdgeInferenceEngine(vision_model_path)
 
     # Create a dummy image (Batch Size 1, 3 Channels, 32x32 pixels)

@@ -7,7 +7,7 @@ import numpy as np
 
 def verify_vision_model():
     print("\n--- Verifying Vision Classifier ---")
-    model_path = "inference/model2_cifar10.onnx"
+    model_path = "../inference/model2_cifar10.onnx"
 
     # 1. Structural Check
     try:
@@ -42,7 +42,7 @@ def verify_vision_model():
 
 def verify_anomaly_model():
     print("\n--- Verifying Anomaly Detector ---")
-    model_path = "inference/anomaly_detector.onnx"
+    model_path = "../inference/anomaly_detector.onnx"
 
     # 1. Structural Check
     try:

@@ -1,7 +1,7 @@
 import time
 import numpy as np
 import os
-from inference_wrapper import EdgeInferenceEngine
+from Deployment.inference_wrapper import EdgeInferenceEngine
 
 
 def run_streaming_inference(model_path, iterations=50, target_hz=5):
@@ -50,7 +50,7 @@ def run_streaming_inference(model_path, iterations=50, target_hz=5):
 
 if __name__ == "__main__":
     # We will test the stream using your highly optimized quantized model
-    test_model = os.path.join("inference", "model2_cifar10_quantized.onnx")
+    test_model = os.path.join("../inference", "model2_cifar10_quantized.onnx")
 
     # Run the continuous sensor simulation for 50 readings at 5 readings per second
     run_streaming_inference(test_model, iterations=50, target_hz=5)
